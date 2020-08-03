@@ -93,10 +93,9 @@ def analyze(request):
         print("function calling")
         jsonData = listFile(stored_uploads)
         # jsonData = json.dumps(jsonData)
-        # jsonData = json.loads(jsonData) 
 
         print(type(jsonData))
         # return HttpResponse(f'<h1> analyzing {jsonData} .... </h1> ')
-        return render(request, 'display.html',{"data" : jsonData})
+        return render(request, 'display.html',{"devData" : jsonData})
     else:
         return HttpResponse('<h1> yup! wait man</h1>')

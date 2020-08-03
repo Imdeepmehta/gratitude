@@ -37,6 +37,8 @@ var Gratitude_data = {
 
 }
 
+var DevData = {{"data"}}
+
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = 1960 - margin.right - margin.left,
     height = 1800 - margin.top - margin.bottom;
@@ -57,7 +59,7 @@ var svg = d3.select("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  root = Gratitude_data;
+  root = DevData;
   root.x0 = height / 2;
   root.y0 = 0;
 

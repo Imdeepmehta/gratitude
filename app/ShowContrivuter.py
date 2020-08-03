@@ -15,8 +15,6 @@ def pypi_url(module_name):
 def convertJson(json_data):
 	# json_data = {}
 	# json_data[module_name] = contri_data
-
-	fd = {}
 	data = {
     "name": "Gratitude",
     "children": [
@@ -29,19 +27,23 @@ def convertJson(json_data):
 		for i in module_data:
 			username_s.append({"name": i[0]})
 
-		data["children"].append({
-			"name": module_name,
-			"children": username_s
+		data['children'].append({
+			'name': module_name,
+			'children': username_s
 		})
+	
 
-    
+	data = json.dumps(data)
 	# # Save the data into json formate
 	with open("data_file.json", "w") as outfile:
    		json.dump(data,outfile)
 	print("done data")
 
-
 	return data
+
+
+	
+
 
 
 
@@ -51,9 +53,9 @@ def findDev(github_url,session):
 	data = []
 
 	
-	for i in range(1,6):
+	for i in range(1):
 		if Flag == 1:
-			contributer_api_url = f"https://api.github.com/repos/{github_url[19:]}/contributors?per_page=100&page={i}"
+			contributer_api_url = f"https://api.github.com/repos/{github_url[19:]}/contributors?per_page=100&page={i+1}"
 			print(contributer_api_url)
 			headers = {'Authorization': f'token {token}'}
 			r = session.get(contributer_api_url)
