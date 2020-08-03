@@ -41,9 +41,10 @@
 			<div class="col-md-8">
 				<form id="filepond-form">{% csrf_token %}
 					<input type="file" class="pond" name="filepond"/>
-					<button id="uploads-submit" type="submit" enable class="btn btn-success" style="float:right;">Store uploads</button>
+					<button id="uploads-submit" type="submit" enable class="btn btn-success" style="float:right;">uploads It.</button>
 				</form>
 			</div>
+			<button onclick="window.location.href='/analyze'" type="button" style="display: none;" class="btn btn-success analyzeBtn">Analyze it</button>
 			<div class="col-md-2"></div>
 		</div>
 		<div class="row">
@@ -155,6 +156,9 @@
 	    			}
 	    		}
 	    	});
+
+	    	// analyzeBtn
+	    	$(".analyzeBtn").show();
 	    });
 	    
 	    $('body').on('click', '.del-upload-btn', function(e) {
